@@ -1,0 +1,179 @@
+.header
+{
+color: gray;
+text-align : center;
+width : 100%;
+opacity : 85%;
+}
+
+.navigationbar ul { 
+ list-style-type: none; 
+ margin: 0; 
+ padding: 0; 
+text-align: center;
+	
+
+}
+
+.navigationbar li {
+list-style-type: none;
+float: left;
+width : 16%;
+  
+font-size: 50 px;
+}
+
+ 
+
+.navigationbar a:link { 
+ background-color: white; 
+ color: orange; } 
+
+.navigationbar a:visited { 
+  
+ color: green;
+ } 
+
+
+.navigationbar a:hover { 
+ background-color: red; 
+ color: white; }
+
+.navigationbar a:active { 
+  
+ color: yellow;
+padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px; } 
+
+
+.maincontent 
+{
+float: left;
+width: 50%;
+text-align: center;
+
+}
+
+
+
+.maincontent select
+{
+float: left;
+width: 50%;
+text-align: center;
+display:list-item;
+}
+.side 
+{
+
+float:left;
+width : 25%;
+}
+.maincontent h1 
+{
+text-align : center;
+}
+.side ul
+{
+list-style-type: none;
+}
+.side2
+{
+text-align: center;
+float: left;
+width : 25%;
+}
+.side2 li
+{
+font-size : 24px;
+
+}
+.side2 p
+{
+font-size : 24px;
+display: block;
+}
+.footer 
+{
+font-size : 70px;
+}
+.footer
+{
+width: 100%;
+
+ float: left;
+
+}
+
+.side img
+{
+width: 50px;
+height:50px;
+vertical-align: baseline;
+
+}
+.side p
+{
+
+clear: left;
+}
+
+.footer img
+{
+width: 50px;
+float: left;
+height: 50px;
+position: relative;
+}
+
+.side h3
+{
+text-align: center;
+}
+.side p
+{
+line-height: 2.0;
+}
+
+body
+{
+text-shadow: 0.5px 0.5px gray;
+background-image: url("background.jpg");
+background-repeat: repeat;
+font-style: normal;
+font-weight: normal;
+
+
+
+}
+
+.demo table {
+    display: block;
+    overflow: scroll;
+    white-space: nowrap;
+}
+
+
+input[type=text]
+{
+border-style: dotted;
+border-width: thin;
+padding-top: 10px;
+   padding-right: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   visibility: visible;
+}
+
+input[type=submit]
+{
+margin-right: 25px;
+margin-bottom: 25px;
+margin-left: 25px;
+margin-top: 25px;
+}
+
+
+

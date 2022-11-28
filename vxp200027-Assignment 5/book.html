@@ -1,0 +1,493 @@
+<!DOCTYPE html>   
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<title> Booking a flight </title>
+</head>
+<body>
+<div class = "header">
+<h1> Booking Your Flight </h1>
+</div>
+<br/>
+
+<div class = "navigationbar">
+<ul>
+  <li><a href="http://localhost/flights.php">Flights</a></li>
+  <li><a href="book.html">Book</a></li>
+  <li><a href="http://localhost/flightstatus.php">Flight Status</a></li>
+  <li><a href="contact.html">Contact</a></li>
+<li><a href="specialoffers.html">Special Offers</a></li>
+<li><a href="register.html">Register</a></li>
+
+
+
+</ul>
+
+</div>
+<br/>
+<br/>
+<div class = "side">
+<h1> Search for Flights Here </h1>
+<p>  <em> Popular Destinations: </em>
+<br/> 
+<ul> 
+<li> Miami
+
+<img src = "aa.jpg" width="50" height="50"/>
+
+</li>
+
+<li> Los Angeles
+
+<img src = "aa.jpg" width="50" height="50"/>
+
+</li>
+
+<li> New York
+
+<img src = "aa.jpg" width="50" height="50"/> 
+</li>
+</ul>
+
+</div>
+
+
+<div class = "maincontent">
+<p id="demo"> </p>
+<h1> Search for Flights Here </h1>
+<form>
+
+ <label for="roundtrip">Round Trip</label>
+<input type="radio" id="roundtrip" name="flighttype" value="Round-Trip"><br/>
+<label for="one-way">One Way</label>
+<input type="radio" id="one-way" name="flighttype" value="One-Way"/> <br/>
+
+<br/>
+</form>
+<form id ="add"> </form>
+<div id='img' class='img'> </div>
+
+</div>
+
+
+<div class = "side2">
+<h1> The 5 Best Airlines in the U.S for Economy </h1>
+<ol> 
+<li> Southwest Airlines</li> 
+
+<li> JetBlue Airways</li> 
+
+<li> Delta Air Lines</li> 
+<li> Allegiant Air</li> 
+<li> Alaska Airlines </li> 
+</ol>
+</div>
+
+
+
+<div class = "footer">
+<p> <strong> BuyandFly </strong>
+<img src = "planes.jpg"/> 
+Vedant Prakash vxp200027
+</p>
+
+</div>
+
+
+ 
+
+
+
+
+
+
+</body>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toString();
+var inputt = document.createElement("input");
+inputt.id = "inputme";
+inputt.type="submit";
+inputt.value = "Check flights";
+var inputt2 = document.createElement("input");
+inputt2.id = "inputme2";
+inputt2.type="submit";
+inputt2.value = "Check flights";
+document.getElementById("one-way").addEventListener("click", myFunct);
+document.getElementById("roundtrip").addEventListener("click", myFunct2);
+function myFunct() {
+
+let form = document.createElement('form');
+form.id="ajaxform2";
+form.action="http://localhost/flightsearch.php";
+let table = document.createElement('table');
+table.id = "newtable";
+let thead = document.createElement('thead');
+let tbody = document.createElement('tbody');
+
+table.appendChild(thead);
+table.appendChild(tbody);
+document.getElementById('add').appendChild(form);
+form.appendChild(table);
+let row1 = document.createElement('tr');
+let element1 = document.createElement('th');
+element1.innerHTML = "Origin";
+let element2 = document.createElement('th');
+element2.innerHTML = "Destination";
+let element3 = document.createElement('th');
+element3.innerHTML = "Departure Date";
+let element4 = document.createElement('th');
+element4.innerHTML = "Arrival Date";
+
+row1.appendChild(element1);
+row1.appendChild(element2);
+row1.appendChild(element3);
+row1.appendChild(element4);
+thead.appendChild(row1);
+
+
+let row2 = document.createElement('tr');
+element1 = document.createElement('td');
+let field1 = document.createElement('input' );
+field1.type = "text";
+field1.id = "origin";
+field1.name = "origin";
+element2 = document.createElement('td');
+let field2 = document.createElement('input' );
+field2.type = "text";
+field2.id = "destination";
+field2.name="destination";
+element3 = document.createElement('td');
+let field3 = document.createElement('input' );
+field3.type = "text";
+field3.id = "departure-date";
+field3.name ="departure-date";
+element4 = document.createElement('td');
+let field4 = document.createElement('input' );
+field4.type = "text";
+field4.id = "arrival-date";
+field4.name="arrival-date";
+
+element1.appendChild(field1);
+element2.appendChild(field2);
+element3.appendChild(field3);
+element4.appendChild(field4);
+
+row2.appendChild(element1);
+row2.appendChild(element2);
+row2.appendChild(element3);
+row2.appendChild(element4);
+tbody.appendChild(row2);
+document.getElementById("newtable").style.borderSpacing = "15px";
+document.getElementById("one-way").removeEventListener("click", myFunct);
+
+document.getElementById("ajaxform2").appendChild(inputt2);
+}
+document.getElementById("one-way").addEventListener("click", displayTable2);
+document.getElementById("roundtrip").addEventListener("click", displayTable);
+
+
+
+function myFunct2(){ 
+let form = document.createElement('form');
+form.id="ajaxform";
+form.action="http://localhost/flightsearch2.php";
+
+
+
+let table = document.createElement('table');
+table.id = "newtable2";
+let thead = document.createElement('thead');
+let tbody = document.createElement('tbody');
+thead.value = "Enter your preferences: ";
+table.appendChild(thead);
+table.appendChild(tbody);
+
+document.getElementById('add').appendChild(form);
+form.appendChild(table);
+let row1 = document.createElement('tr');
+let element1 = document.createElement('th');
+element1.innerHTML = "Origin";
+let element2 = document.createElement('th');
+element2.innerHTML = "Destination";
+let element3 = document.createElement('th');
+element3.innerHTML = "Departure Date";
+let element4 = document.createElement('th');
+element4.innerHTML = "Arrival Date";
+
+row1.appendChild(element1);
+row1.appendChild(element2);
+row1.appendChild(element3);
+row1.appendChild(element4);
+thead.appendChild(row1);
+
+
+let row2 = document.createElement('tr');
+element1 = document.createElement('td');
+let field1 = document.createElement('input' );
+field1.type = "text";
+field1.id = "origin";
+field1.name = "origin";
+element2 = document.createElement('td');
+let field2 = document.createElement('input' );
+field2.type = "text";
+field2.id = "destination";
+field2.name = "destination";
+
+element3 = document.createElement('td');
+let field3 = document.createElement('input' );
+field3.type = "text";
+field3.id = "departure-date";
+field3.name = "departure-date";
+
+element4 = document.createElement('td');
+let field4 = document.createElement('input' );
+field4.type = "text";
+field4.id = "arrival-time";
+field4.name = "arrival-date";
+
+
+element1.appendChild(field1);
+element2.appendChild(field2);
+element3.appendChild(field3);
+element4.appendChild(field4);
+
+row2.appendChild(element1);
+row2.appendChild(element2);
+row2.appendChild(element3);
+row2.appendChild(element4);
+tbody.appendChild(row2);
+document.getElementById("newtable2").style.borderSpacing = "15px";
+
+
+
+
+
+
+table = document.createElement('table');
+table.id = "newtable3";
+thead = document.createElement('thead');
+tbody = document.createElement('tbody');
+
+table.appendChild(thead);
+table.appendChild(tbody);
+document.getElementById('ajaxform').appendChild(table);
+let row3 = document.createElement('tr');
+let element5 = document.createElement('th');
+element5.innerHTML = "Origin";
+let element6 = document.createElement('th');
+element6.innerHTML = "Destination";
+let element7 = document.createElement('th');
+element7.innerHTML = "Departure Date";
+let element8 = document.createElement('th');
+element8.innerHTML = "Arrival Date";
+
+row3.appendChild(element5);
+row3.appendChild(element6);
+row3.appendChild(element7);
+row3.appendChild(element8);
+thead.appendChild(row3);
+
+
+let row4 = document.createElement('tr');
+element5 = document.createElement('td');
+let field5 = document.createElement('input' );
+field5.type = "text";
+field5.id = "origin2";
+field5.name = "origin2";
+
+element6 = document.createElement('td');
+let field6 = document.createElement('input' );
+field6.type = "text";
+field6.id = "destination2";
+field6.name = "destination2";
+
+element7 = document.createElement('td');
+let field7 = document.createElement('input' );
+field7.type = "text";
+field7.id = "departure-date2";
+field7.name = "departure-date2";
+
+element8 = document.createElement('td');
+let field8 = document.createElement('input' );
+field8.type = "text";
+field8.id = "arrival-time2";
+field8.name = "arrival-date2";
+
+element5.appendChild(field5);
+element6.appendChild(field6);
+element7.appendChild(field7);
+element8.appendChild(field8);
+
+row4.appendChild(element5);
+row4.appendChild(element6);
+row4.appendChild(element7);
+row4.appendChild(element8);
+tbody.appendChild(row4);
+document.getElementById("newtable3").style.borderSpacing = "15px";
+document.getElementById("roundtrip").removeEventListener("click", myFunct2);
+document.getElementById("ajaxform").appendChild(inputt);
+}
+
+
+
+function displayTable() {
+      document.getElementById("inputme").style.display='block';
+     document.getElementById("newtable2").style.display = 'table';
+     document.getElementById("newtable3").style.display = 'table';
+     document.getElementById("newtable").style.display='none';
+     document.getElementById("inputme2").style.display='none';
+     }
+     
+
+function displayTable2() {
+           document.getElementById("inputme2").style.display='block';
+         document.getElementById("newtable").style.display = 'table';
+         document.getElementById("newtable2").style.display='none';
+         document.getElementById("newtable3").style.display='none';
+             document.getElementById("inputme").style.display='none';
+             }
+
+var img = document.createElement("img");
+            img.src = 
+'person.jpg';
+
+document.getElementById('img').appendChild(img);
+document.getElementById('img').addEventListener("click", createForm);
+img.style.height="50px"; img.style.width="50px";
+
+
+
+function createForm()
+{
+    let totalform = document.createElement('form');
+    totalform.id = "totform";
+var form = document.createElement("select");
+form.id = "passList";
+var form2 = document.createElement("select");
+form2.id = "passList2";
+var form3 = document.createElement("select");
+form3.id = "passList3";
+    var adults = document.createElement("option");
+    adults.setAttribute("value", "adults");
+    adults.setAttribute("label", "adults");
+    
+    var children = document.createElement("option");
+    children.setAttribute("value", "children");
+    children.setAttribute("label", "children");
+    
+    var infants = document.createElement("option");
+    infants.setAttribute("value", "infants");
+   infants.setAttribute("label", "infants");
+   
+   var adults2 = document.createElement("option");
+    adults2.setAttribute("value", "adults");
+    adults2.setAttribute("label", "adults");
+    
+    var children2 = document.createElement("option");
+    children2.setAttribute("value", "children");
+    children2.setAttribute("label", "children");
+    
+    var infants2 = document.createElement("option");
+    infants2.setAttribute("value", "infants");
+   infants2.setAttribute("label", "infants");
+   
+   var adults3 = document.createElement("option");
+    adults3.setAttribute("value", "adults");
+    adults3.setAttribute("label", "adults");
+    
+    var children3 = document.createElement("option");
+    children3.setAttribute("value", "children");
+    children3.setAttribute("label", "children");
+    
+    var infants3 = document.createElement("option");
+    infants3.setAttribute("value", "infants");
+   infants3.setAttribute("label", "infants");
+     // Create an input element for date of birth
+     var aCount = document.createElement("input");
+     aCount.setAttribute("type", "text");
+     aCount.setAttribute("name", "adultCount");
+     aCount.setAttribute("placeholder", "Number of Adults");
+ 
+     // Create an input element for emailID
+     var cCount = document.createElement("input");
+     cCount.setAttribute("type", "text");
+     cCount.setAttribute("name", "childCount");
+     cCount.setAttribute("placeholder", "Number of Children");
+ 
+      // Create an input element for password
+      var iCount = document.createElement("input");
+      iCount.setAttribute("type", "text");
+      iCount.setAttribute("name", "infantCount");
+      iCount.setAttribute("placeholder", "Number of Infants");
+ 
+            
+             var s = document.createElement("input");
+              s.setAttribute("type", "submit");
+              s.setAttribute("value", "Submit");
+                 
+              var linebreak3 = document.createElement("br");
+                var linebreak4 = document.createElement("br");
+                var linebreak5 = document.createElement("br");
+             var linebreak = document.createElement("br");
+                var linebreak1 = document.createElement("br");
+                var linebreak2 = document.createElement("br");
+                var linebreak6 = document.createElement("br");
+                var linebreak7 = document.createElement("br");
+                var linebreak8 = document.createElement("br");
+              form.appendChild(adults);
+            
+              form.appendChild(children);
+              
+              form.appendChild(infants);
+              
+              totalform.appendChild(form);
+              totalform.appendChild(aCount);
+              totalform.appendChild(linebreak);
+              totalform.appendChild(linebreak1);
+              form2.appendChild(adults2);
+            
+              form2.appendChild(children2);
+              
+              form2.appendChild(infants2);
+              totalform.appendChild(form2);
+              totalform.appendChild(cCount);
+              totalform.appendChild(linebreak2);
+              totalform.appendChild(linebreak3);
+              form3.appendChild(adults3);
+            
+              form3.appendChild(children3);
+              
+              form3.appendChild(infants3);
+              totalform.appendChild(form3);
+              totalform.appendChild(iCount);
+              totalform.appendChild(linebreak4);
+              totalform.appendChild(linebreak5);
+              totalform.appendChild(linebreak6);
+              totalform.appendChild(s);
+             
+             
+               
+               document.getElementById("img").appendChild(totalform);
+       document.getElementById('img').removeEventListener("click", createForm);
+      
+       
+       
+       }
+       
+        
+         
+        
+        
+      
+   
+   
+   
+
+// Adding the entire table to the body tag
+
+</script>
+</html>
+

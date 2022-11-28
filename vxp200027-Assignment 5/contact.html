@@ -1,0 +1,189 @@
+<!DOCTYPE html>   
+<html>
+<head>
+<title> Contact BuyandFly </title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+ 
+
+ <div class="header"> 
+<h1> Contact </h1>
+</div>
+<hr />
+
+<div class = "navigationbar">
+<ul>
+  <li><a href="http://localhost/flights.php">Flights</a></li>
+  <li><a href="book.html">Book</a></li>
+  <li><a href="http://localhost/flightstatus.php">Flight Status</a></li>
+  <li><a href="contact.html">Contact</a></li>
+<li><a href="specialoffers.html">Special Offers</a></li>
+<li><a href="register.html">Register</a></li>
+
+
+
+</ul>
+
+</div>
+<div class = "side">
+<h3>
+About Us: </h3> 
+<p>
+BuyandFly is a company designed to best suit our customers needs. We have all the latest
+and greatest offers from all the premier airlines and offer our own discounts as well. 
+Our customers can browse a wide variety of flights that can take them locally and internationally for 
+cheap. We are working on expanding the site to connect to rental car companies to best service our 
+customers' needs.
+<br/>
+Call (412) 661-6821 or email buyandfly@gmail.com with any questions or concerns
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+
+<br/>
+</p>
+</div>
+<br/> <br/> <br/> <br/> <br/>
+<div class = "maincontent">
+<p id="demo"> </p>
+<form>
+
+  <label for="fname">First Name:</label><br/>
+  <input type="text" id="fname" name="fname"  ><br/>
+  <label for="lname">Last Name:</label><br/>
+  <input type="text" id="lname" name="lname" > <br/> <br/> <br/>
+  <label for="phonenumber"> Phone Number: (Enter form (xxx)xxx-xxxx)</label><br/>
+  <input type="text" id="phonenumber" name="pnumber"> <br/> <br/> <br/>
+<input type="radio" id="gender" name="gender" value="Male">
+<label for="gender">Male</label><br>
+<input type="radio" id="gender2" name="gender" value="Female">
+<label for="gender">Female</label><br>
+
+<label for="emailaddress">Email Address:</label><br/>
+  <input type="text" id="emailaddress" name="email"> <br/> <br/> <br/>
+<label for="comment">Comment:</label><br/>
+  <input type="text" id="comment" name="comment"> <br/> <br/> <br/>
+<input type='button' id='createJSON' value='Create a JSON Button'> 
+
+</form>
+
+</div>
+
+
+
+<div class = "side2">
+<h3> Become a member for email reminders of our special offers </h3> <br/> <br/> 
+<form>
+<h2> Sign In </h2> 
+<label for="username">Username:</label> <br/>
+<input type="text" id="username" name="username" > <br/> <br/>
+<label for="password">Password:</label> <br/>
+<input type="text" id="password" name="password" > <br/> <br/>
+<input type="submit" value="Submit">
+</form> <br/> <br/> <br/>
+
+<form>
+<h3> Create a New Account </h3>
+<input type="submit" value="Create a New Account">
+</form>
+</div>
+
+<div class = "footer">
+<p> <strong> BuyandFly </strong>
+<img src = "planes.jpg"/> 
+Vedant Prakash vxp200027
+</p>
+
+</div>
+
+ <script>
+
+    
+  $('#createJSON').on("click", function(){   
+    
+var k = /^[A-Za-z]+$/;
+var phone = /^(\()\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/;
+var email = (/^[^@]+@[^@]+$/); 
+
+        var isValid1 = k.test(document.getElementById("fname").value);
+        var isValid2 = k.test(document.getElementById("lname").value);
+        var l = document.getElementById("fname").value;
+        var j = document.getElementById("lname").value;
+        var isValid3 = phone.test(document.getElementById("phonenumber").value);
+        var isValid4 = email.test(document.getElementById("emailaddress").value);
+        if (!(isValid1 && (l.charAt(0) === l.charAt(0).toUpperCase()))){ 
+                
+            alert("Please enter a capital letter for the first letter in the first name and only type in letters.");
+            
+        }
+ 
+        if (!(isValid2 && (j.charAt(0) === j.charAt(0).toUpperCase()))){ 
+                
+            alert("Please enter a capital letter for the first letter in the last name and only type in letters.");
+           
+        }
+        else if (!(isValid3)){ 
+                
+            alert("Please enter a valid phone number. Format: (xxx)xxx-xxxx");
+            
+        }
+        else if (!(isValid4)){ 
+               
+            alert("Please enter a email. You must have the @ sign in your e-mail. ");
+            
+        }
+        else if (l === j)
+        {
+            alert("Your first and last name cannot be the same.");
+        }
+        else if(!(document.getElementById('gender').checked === true || document.getElementById('gender2').checked === true))
+        {
+            alert("Please choose a gender.");
+            
+        }
+        else if (!(document.getElementById('comment').value.length >= 10))
+        {
+            alert("Please enter at least 10 characters for the comment section.");
+           
+        }
+        
+        else
+        {
+            var answers = {"fname": '' + $('#fname').val() , "lname": '' + $('#lname').val() , "phonenumber": '' + $('#phonenumber').val() ,
+             "email":'' + $('#emailaddress').val() , 
+"gender": '' + $("input[name='gender']:checked").val(), 
+"comment":'' + $('#comment').val() };
+            
+           
+            var texttoAdd = '<p>You entered: </p> \n\
+                            <p> First Name: ' + answers.fname + '</p>\n\
+                            <p> Last Name: ' + answers.lname + '</p> \n\
+                            <p> Phone Number: ' + answers.phonenumber + '</p>\n\
+                            <p> Email Address: ' + answers.email + '</p>\n\
+                            <p> Gender: ' + answers.gender + '</p>   \n\
+                            <p> Comment: ' + answers.comment + '</p>';
+            
+          $('#demo').append(texttoAdd);
+        }
+       
+});
+
+
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toString();
+
+</script>
+
+</body>
+</html>

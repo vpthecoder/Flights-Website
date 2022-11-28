@@ -1,0 +1,8 @@
+RUby is a completely object oriented programming langauge while php has some features that
+are not object oriented. PHP runs on the web server while you would need to use a framwork
+such as Ruby on Rails to run Ruby. Testing is easier in Ruby since everything is object-oriented so 
+it can reduce the time for deployment compared to php. PHP was created specifically for the web
+while Ruby is a genral purpose object-oriented language. PHP has a wider developer community and runs more sites
+on the web as of right now. PHP can be harder to maintain due to the fact that it is weakly typed and can lead to
+some ugly code. Ruby is much more scalable than PHP and big programs written in RUby are easily maintainable. 
+Since it is a general-purpose lanaguage, Ruby can do a little more than PHP, which is only a scripting language.

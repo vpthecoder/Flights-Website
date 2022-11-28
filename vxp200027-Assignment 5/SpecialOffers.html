@@ -1,0 +1,443 @@
+<!DOCTYPE html>   
+<html>
+<head>
+ <title> Special Offers on your flights </title> 
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body class="panel">
+ 
+
+ <div class="header"> 
+<h1> Special Offers </h1>
+</div>
+<hr />
+
+<div class = "navigationbar">
+<ul>
+ <li><a href="http://localhost/flights.php">Flights</a></li>
+  <li><a href="book.html">Book</a></li>
+  <li><a href="http://localhost/flightstatus.php">Flight Status</a></li>
+  <li><a href="contact.html">Contact</a></li>
+<li><a href="specialoffers.html">Special Offers</a></li>
+<li><a href="register.html">Register</a></li>
+
+
+
+</ul>
+
+</div>
+<div class = "side">
+<h3>
+Cheap Flights from Dallas to: </h3> 
+<p>
+<img src = "aa.jpg" />
+<strong> Phoenix <br/> $118 </strong> <br/>
+Round-Trip from Jun 21 - Jun 28
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+<img src = "aa.jpg" />
+<strong> Seattle <br/> $126 </strong> <br/>
+Round-Trip from Jun 11 - Jun 18
+<br/>
+
+<br/>
+
+
+<br/>
+<img src = "aa.jpg" />
+<strong> New Orleans <br/> $115 </strong> <br/>
+Round-Trip from Jun 9 - Jun 16
+<br/>
+
+<br/>
+
+
+<br/>
+</p>
+</div>
+<br/> <br/> <br/>
+<div class = "maincontent">
+<p id="demo"> </p>
+<br/>
+<div id ='changeFont'>
+    <select name="fontsize" id="font">
+  <option value="font1">10px</option>
+  <option value="font2">15px</option>
+  <option value="font3">20px</option>
+  <option value="font4">25px</option>
+    </select>
+    <button type="button" onclick="updateFontSize();">Change Font Size</button>
+    <br/> 
+</div>
+
+<div id ='changeBackgroundColor'>
+<select name="backgroundcolor" id="color">
+  <option value="#c0efff">Light Blue</option>
+  <option value="#fdfc03">Yellow</option>
+  <option value="#ff0000">Red</option>
+  <option value="#d87500">Orange</option>
+    </select>
+    <button type="button" onclick="updateColor();">Change Background Color</button>
+</div>
+<br/> <br/> <br/>
+<form>
+<table border = "1">
+  <tr>
+    <th>Going To</th>
+    <th>Leaving From</th>
+    <th>Departing (enter mm/dd/year)</th>
+    <th>Returning (enter mm/dd/year)</th>
+	
+  </tr>
+  <tr>
+    <td> 
+<input type= "text" location = "location">
+</td>
+    <td> 
+<input type= "text" location = "locationj">
+</td>
+    <td> 
+<input type = "text" location = "locationk">
+</td>
+<td> 
+<input type = "text" location = "locationl">
+</td>
+
+  </tr>
+  
+</table>
+<br/> <br/>
+<label for="budget">Budget(enter in dollars):</label> <br/>
+<input type="text" id="budget" name="budget"> 
+<br/> <br/> <br/> 
+<input type="submit" value="Submit" />
+</form>
+</div>
+
+<div class = "side2">
+<form id="adds"> </form> 
+<h3> Become a member for email reminders of our special offers </h3> <br/> <br/> 
+
+<form>
+<h2> Sign In </h2> 
+<label for="username">Username:</label> <br/>
+<input type="text" id="username" name="username"> <br/> <br/>
+<label for="password">Password:</label> <br/>
+<input type="text" id="password" name="password"> <br/> <br/>
+<input type="submit" value="Submit">
+</form> <br/> <br/> <br/>
+
+<form>
+<h3> Create a New Account </h3>
+<input type="submit" value="Create a New Account">
+</form>
+</div>
+
+<div class = "footer">
+<p> <strong> BuyandFly </strong>
+<img src = "planes.jpg"/> 
+Vedant Prakash vxp200027
+</p>
+
+</div>
+
+ <script>
+var d = new Date();
+
+document.getElementById("demo").innerHTML = d.toString();
+
+       
+       // Changes the font size of the sub section
+       function updateFontSize(){
+           var size = document.getElementById("font");
+           var fontSizeCustom = size.options[size.selectedIndex].text;
+           var cols = document.getElementsByClassName('panel');
+           for(i = 0; i < cols.length; i++) {
+               cols[i].style.fontSize = fontSizeCustom;
+           }
+       }
+       // Changes the background color of the web body
+       function updateColor(){
+           var color = document.getElementById("color");
+           var colorCustom = color.value;
+           document.body.style.backgroundColor = colorCustom;
+       }
+       var button = document.createElement('button');
+       button.type="button";
+       button.value='Special Offers';
+       button.innerHTML='Special Offers';
+       button.id='specialoff';
+       document.getElementById("adds").appendChild(button);  
+       document.getElementById('specialoff').addEventListener("click",questionfunct);
+       var start = 0;
+       var checked1 = true;
+       var checked2 = true;
+       var checked3 = true;
+       function questionfunct(){
+        start = new Date().getTime(); 
+       let x = document.createElement('form');
+       x.id="question";
+       let heading1 = document.createElement('p');
+       heading1.innerHTML= "Have you flown on at least 10 flights in the past year?";
+       let y = document.createElement('input');
+       y.type = 'radio';
+       y.id = "10flights"; y.name="flights"; y.value="True";
+       let z = document.createElement('label');
+       z.for="10flights"; z.innerHTML='True';
+       let xy = document.createElement('br');
+       let xy1 = document.createElement('br');
+       
+       let button2 = document.createElement('button');
+       button2.type="button";
+       button2.value='Submit';
+       button2.innerHTML='Submit';
+       button2.id="submit1";
+       let button3 = document.createElement('button');
+       button3.type="button";
+       button3.innerHTML='Skip';
+       button3.id="skip1";
+       let false1 = document.createElement('input');
+       false1.type = 'radio';
+       false1.id = "10flights2"; false1.name="flights"; false1.value="False";
+       let label1 = document.createElement('label');
+       label1.for="10flights2"; label1.innerHTML='False';
+       
+       
+       document.getElementById("adds").appendChild(heading1);
+       document.getElementById("adds").appendChild(xy1);
+       document.getElementById("adds").appendChild(y);
+       document.getElementById("adds").appendChild(z);
+       document.getElementById("adds").appendChild(false1);
+       document.getElementById("adds").appendChild(label1);
+       document.getElementById("adds").appendChild(xy);
+       document.getElementById("adds").appendChild(button2);
+       document.getElementById("adds").appendChild(button3);
+       
+       document.getElementById('skip1').addEventListener("click",question);
+       document.getElementById("submit1").addEventListener("click",question);
+       
+   }
+       function question(){
+           let radios = document.getElementsByName('flights');
+           for (var i = 0; i <  radios.length; i++) {
+         if (radios[i].checked) {
+            checked1 = radios[i].value;
+            break;
+        }
+        if (checked1===true)
+        {
+            checked1='False';
+        }
+    }
+           document.getElementById("submit1").removeEventListener("click",question);
+        document.getElementById('skip1').removeEventListener("click",question);
+           document.getElementById('specialoff').removeEventListener("click",questionfunct);
+           let parent = document.getElementById('adds');
+           while (parent.lastChild)
+           {
+               parent.removeChild(parent.lastChild);
+           }
+    
+        let xy2 = document.createElement('br');
+        let heading1 = document.createElement('p');
+       heading1.innerHTML = "Are you a senior flyer?";
+        let question2 = document.createElement('input');
+       question2.type = 'radio';
+       question2.id = "seniorflyer"; question2.name="flights2"; question2.value="True";
+       let true1 = document.createElement('label');
+       true1.for="seniorflyer"; true1.innerHTML='True'; 
+        let question2b = document.createElement('input');
+       question2b.type = 'radio';
+       question2b.id = "seniorflyer2"; question2b.name="flights2"; question2b.value="False";
+       let true2 = document.createElement('label');
+       true2.for="seniorflyer2"; true2.innerHTML='False'; 
+       
+       
+       let xy3 = document.createElement('br');
+       
+       let button2 = document.createElement('button');
+       button2.type="button";
+       button2.value='Submit';
+       button2.innerHTML='Submit';
+       button2.id="submit1";
+       let button3 = document.createElement('button');
+       button3.type="button";
+       button3.innerHTML='Skip';
+       button3.id="skip1";
+       
+       
+       
+       document.getElementById("adds").appendChild(heading1);
+       document.getElementById("adds").appendChild(xy3);
+       document.getElementById("adds").appendChild(question2);
+       document.getElementById("adds").appendChild(true1);
+       document.getElementById("adds").appendChild(question2b);
+       document.getElementById("adds").appendChild(true2);
+       document.getElementById("adds").appendChild(xy2);
+       document.getElementById("adds").appendChild(button2);
+       document.getElementById("adds").appendChild(button3);
+       /*document.getElementById('skip1').addEventListener("click",question2);
+       document.getElementById("submit").addEventListener("click", question2);*/
+        document.getElementById('skip1').addEventListener("click",question3);
+       document.getElementById("submit1").addEventListener("click",question3);
+       
+       
+       }
+       function question3()
+       {
+           let radios = document.getElementsByName('flights2');
+           for (var i = 0; i <  radios.length; i++) {
+         if (radios[i].checked) {
+            checked2 = radios[i].value;
+            break;
+        }
+        if (checked2===true)
+        {
+            checked2='False';
+        }
+    }
+        document.getElementById("submit1").removeEventListener("click",question3);
+        document.getElementById('skip1').removeEventListener("click",question3);
+           
+           let parent = document.getElementById('adds');
+           while (parent.lastChild)
+           {
+               parent.removeChild(parent.lastChild);
+           }
+    
+        let xy2 = document.createElement('br');
+        let heading1 = document.createElement('p');
+       heading1.innerHTML = "Have you traveled with us in the last 3 months?";
+        let question2 = document.createElement('input');
+       question2.type = 'radio';
+       question2.id = "traveled1"; question2.name="flights3"; question2.value="True";
+       let true1 = document.createElement('label');
+       true1.for="traveled1"; true1.innerHTML='True'; 
+        let question2b = document.createElement('input');
+       question2b.type = 'radio';
+       question2b.id = "traveled2"; question2b.name="flights3"; question2b.value="False";
+       let true2 = document.createElement('label');
+       true2.for="traveled2"; true2.innerHTML='False'; 
+       
+       
+       let xy3 = document.createElement('br');
+       
+       let button2 = document.createElement('button');
+       button2.type="button";
+       button2.value='Submit';
+       button2.innerHTML='Submit';
+       button2.id="submit1";
+       let button3 = document.createElement('button');
+       button3.type="button";
+       button3.innerHTML='Skip';
+       button3.id="skip1";
+       
+       
+       
+       document.getElementById("adds").appendChild(heading1);
+       document.getElementById("adds").appendChild(xy3);
+       document.getElementById("adds").appendChild(question2);
+       document.getElementById("adds").appendChild(true1);
+       document.getElementById("adds").appendChild(question2b);
+       document.getElementById("adds").appendChild(true2);
+       document.getElementById("adds").appendChild(xy2);
+       document.getElementById("adds").appendChild(button2);
+       document.getElementById("adds").appendChild(button3);
+      
+      
+      document.getElementById('skip1').addEventListener("click",result);
+       document.getElementById("submit1").addEventListener("click",result);
+   
+       }
+       function result(){
+           let radios = document.getElementsByName('flights3');
+           for (var i = 0; i <  radios.length; i++) {
+         if (radios[i].checked) {
+            checked3 = radios[i].value;
+            break;
+        }
+        if (checked3===true)
+        {
+            checked3='False';
+        }
+    }
+     let parent = document.getElementById('adds');
+           while (parent.lastChild)
+           {
+               parent.removeChild(parent.lastChild);
+           }
+           
+          
+       var end = new Date().getTime();
+        let time = end - start;
+        let timetext = document.createElement('p');
+        timetext.innerHTML="You spent " + time/1000 + " seconds on the quiz";
+        document.getElementById('adds').appendChild(timetext);
+        if (checked1==="True" && checked2==="True" && checked3==="True")
+        {
+            let offer1 = document.createElement('p');
+            offer1.innerHTML="Because you have traveled with us in the last three months, are a senior flyer, and have flown on at least 10 flights with us, you will get our best offer, which is 75% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer1);
+        }
+         else if (checked1==="False" && checked2==="False" && checked3==="False")
+        {
+            let offer2 = document.createElement('p');
+            offer2.innerHTML="Because you have not traveled with us in the last three months, are not a senior flyer, and have not flown on at least 10 flights with us, you will get our basic offer, which is 5% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer2);
+        }
+         else if (checked1==="True" && checked2==="False" && checked3==="True")
+        {
+            let offer3 = document.createElement('p');
+            offer3.innerHTML="Because you have traveled with us in the last three months and have flown on at least 10 flights with us, you will get 50% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer3);
+        }
+        else if (checked1==="True" && checked2==="True" && checked3==="False")
+        {
+            let offer4 = document.createElement('p');
+            offer4.innerHTML="Because you have flown on at least 10 flights with us and and are a senior flyer, you will get 50% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer4);
+        }
+        else if (checked1==="False" && checked2==="True" && checked3==="True")
+        {
+            let offer5 = document.createElement('p');
+            offer5.innerHTML="Because you are a senior flyer and have traveled with us in the last three months, you will get 50% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer5);
+        }
+        else if (checked1==="False" && checked2==="True" && checked3==="False")
+        {
+            let offer6 = document.createElement('p');
+            offer6.innerHTML="Because you are a senior flyer ,you will get 25% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer6);
+        }
+         else if (checked1==="True" && checked2==="False" && checked3==="False")
+        {
+            let offer7 = document.createElement('p');
+            offer7.innerHTML="Because you have flown on at least 10 flights with us,you will get 25% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer7);
+        }
+        else if (checked1==="False" && checked2==="False" && checked3==="True")
+        {
+            let offer8 = document.createElement('p');
+            offer8.innerHTML="Because you have traveled with us in the last three months,you will get 25% off on your next flight!"; 
+            
+             document.getElementById('adds').appendChild(offer8);
+        }
+       
+      }           
+                  
+</script>
+
+</body>
+</html> 

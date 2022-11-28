@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<flights> <flight> <origin>Dubai</origin>  <destination>California</destination> 
+       <departuredate>June 25 2022</departuredate> 
+        <departuretime>6:30 p.m.</departuretime>  <arrivaldate>June 26 2022</arrivaldate>
+        <arrivaltime>10:30 p.m.</arrivaltime>  <price> 2000 </price>  </flight> 
+        
+        
+        <flight>  <origin>Austin</origin> <destination>Dallas</destination> 
+       <departuredate>June 20 2022</departuredate>
+        <departuretime>3:50 p.m.</departuretime><arrivaldate>June 20 2022
+        </arrivaldate>
+        <arrivaltime>5:30 p.m.</arrivaltime> <price> 2000 </price> </flight>
+        
+        
+        <flight>  <origin> Houston  
+   </origin> <destination> Dallas </destination>
+       <departuredate>June 20 2022</departuredate>
+        <departuretime>3:50 p.m.</departuretime><arrivaldate>June 20
+        2022</arrivaldate>
+        <arrivaltime> 6:10 p.m. </arrivaltime> <price> 2000 </price></flight> 
+
+
+
+        <flight>   <origin> Seoul  
+   </origin>  <destination> Shanghai </destination> 
+       <departuredate>June 21 2022</departuredate> 
+        <departuretime>11:25 a.m.</departuretime>  <arrivaldate>June 21
+        2022</arrivaldate>
+         <arrivaltime> 4:25 p.m. </arrivaltime>  <price> 2000 </price>  </flight> 
+        
+        
+          <flight>   <origin> Melbourne  
+   </origin>  <destination> Brazil </destination> 
+       <departuredate>June 22 2022</departuredate> 
+        <departuretime>2:15 p.m.</departuretime>  <arrivaldate>June 24
+        2022</arrivaldate>
+         <arrivaltime> 8:40 p.m. </arrivaltime>  <price> 2000 </price>  </flight> 
+        
+         <flight>   <origin> Argentina  
+   </origin>  <destination> London </destination> 
+       <departuredate>June 22 2022</departuredate> 
+        <departuretime>6:40 p.m.</departuretime>  <arrivaldate>June 24
+        2022</arrivaldate>
+         <arrivaltime> 10:40 p.m. </arrivaltime>  <price> 2000 </price>  </flight> 
+        
+        
+        <flight>   <origin> Moscow  
+   </origin>  <destination> Athens </destination> 
+       <departuredate>June 22 2022</departuredate> 
+        <departuretime>9:40 a.m.</departuretime>  <arrivaldate>June 24
+        2022</arrivaldate>
+         <arrivaltime> 3:10 p.m. </arrivaltime>  <price> 2000 </price>  </flight> 
+        
+        <flight>   <origin> Washington D.C.  
+   </origin>  <destination> Atlanta </destination> 
+       <departuredate>June 22 2022</departuredate> 
+        <departuretime>6:40 p.m.</departuretime>  <arrivaldate>June 22
+        2022</arrivaldate>
+         <arrivaltime> 9:20 p.m. </arrivaltime>  <price> 2000 </price>  </flight> 
+        
+        
+        <flight>  <origin> San Francisco  
+   </origin>  <destination> Phoenix </destination> 
+       <departuredate>June 21 2022</departuredate> 
+        <departuretime>2:20 p.m.</departuretime>  <arrivaldate>June 21
+        2022</arrivaldate>
+         <arrivaltime> 3:40 p.m. </arrivaltime>  <price> 2000 </price>  </flight> 
+        
+        
+        <flight>  <origin> Boston  
+   </origin>  <destination> New York </destination> 
+       <departuredate>June 20 2022</departuredate> 
+        <departuretime>9:15 a.m.</departuretime>  <arrivaldate>June 20
+        2022</arrivaldate> <arrivaltime> 10:20 a.m. </arrivaltime>   
+        <price> 2000 </price> </flight> 
+</flights> 
